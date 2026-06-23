@@ -1,0 +1,1 @@
+https://www.amazon.com/dp/0578973839?&linkCode=sl1&tag=nicksingh03-20&linkId=4fa541a539320e8936926cb3a5167881&language=en_US&ref_=as_li_ss_tl - ace the data science interview. A lot of useful info, even on softer topics like resume creation
