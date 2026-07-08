@@ -79,3 +79,57 @@ where h.rn = 1 and l.rn=1
 
 we transform stock data to just display highest and lowest as columns
 
+10. self joins
+useful concepts for hierarchical data / looking for streaks in time fields
+
+This example allows to find users which made transactions on 3 consecutive days
+```
+SELECT distinct(t1.user_id) from transactions t1
+join transactions t2 on t1.transaction_date + INTERVAL '1 day' = t2.transaction_date
+join transactions t3 on t1.transaction_date + INTERVAL '2 days' = t3.transaction_date
+order by t1.user_id
+```
+
+And this allows to find a manager of an employee in employee table
+```
+SELECT
+  e.first_name || ' ' || e.last_name employee,
+  m.first_name || ' ' || m.last_name manager
+FROM
+  employee e
+  INNER JOIN employee m ON m.employee_id = e.manager_id
+ORDER BY
+  manager;
+```
+
+11. working with multiple foregin keys in a single table
+
+If there are multiple columns that point to the same foregin key in a different table, multiple join to the same table should be performed. Data from corresponding joins can then be retrieved by querying correct alias.
+
+```
+SELECT 
+round( 100.0 * count(*) / ( select count(*) from phone_calls), 1) as international_calls_pct 
+
+FROM phone_calls pc 
+join phone_info pci on pc.caller_id = pci.caller_id
+join phone_info pri on pc.receiver_id = pri.caller_id
+where pci.country_id <> pri.country_id;
+```
+
+12. Searching for intersection between two subsets
+exists() is useful for such tasks, it allows to check whether row with certain conditions exists. Inside of the call tables from upper scope can be referenced. Here is an example where we look for intersection in 2 groups - users with events that happened both last month and in current month
+```
+SELECT 
+  EXTRACT(MONTH from curr_month.event_date) as month,
+  count(distinct user_id) as monthly_active_users
+from user_actions curr_month
+where extract(year from curr_month.event_date) = 2022 and extract(month from curr_month.event_date) = 7
+and exists(
+  select last_month.user_id
+  from user_actions last_month
+  where 
+  extract(MONTH from curr_month.event_date - interval '1 MONTH') = extract(MONTH from last_month.event_date ) 
+  and curr_month.user_id = last_month.user_id
+)
+group by month
+```

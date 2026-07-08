@@ -18,3 +18,9 @@ Dziś po 1 zadaniu rekrutacyjnym z Microsoft i Google - Supercloud Customer i Od
 
 # 02.07.2026
 Zadanie ze spotify z unionem, doszkolenie się z union/intercept/except. Jedno zadanie z rank z amazonem i jedno zadanie z horyzontalnym mergem danych. Powoli mozna sprobować zadań "HARD"
+
+# 06.07 2026
+Zadanie z profilowania tabeli z United Health, trudne zadanie z Facebook, szukanie danych jako intersekcji 2 zbiorów
+
+# 08.07.2026
+Zadanie z Amazona, nauka o self joins. Dwa zadania z Alibaby (szukanie mody i praca z wieloma kluczami obcymi w jednej tabeli)
