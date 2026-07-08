@@ -23,4 +23,4 @@ Zadanie ze spotify z unionem, doszkolenie się z union/intercept/except. Jedno z
 Zadanie z profilowania tabeli z United Health, trudne zadanie z Facebook, szukanie danych jako intersekcji 2 zbiorów
 
 # 08.07.2026
-Zadanie z Amazona, nauka o self joins. Dwa zadania z Alibaby (szukanie mody i praca z wieloma kluczami obcymi w jednej tabeli)
+Zadanie z Amazona, nauka o self joins. Dwa zadania z Alibaby (szukanie mody i praca z wieloma kluczami obcymi w jednej tabeli). Już prawie połowa, celuje w 30 skończonych zadań
