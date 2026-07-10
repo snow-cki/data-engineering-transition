@@ -133,3 +133,23 @@ and exists(
 )
 group by month
 ```
+
+13. generate_series
+Besides the usual obvious use, it can be used in cross joins to explode data (I don't know a better word). For example
+
+```
+SELECT searches FROM search_frequency, generate_series(1, num_users, 1) order by searches
+```
+
+spews out each value of searches num_users times as a separate row
+
+14. percentile_cont and percentile_disc (continous and discrete)
+
+Used to retrieve data at a certain vertical position in the table, or in other words in a certain percentile. Useful for median, which is 50th percentile
+
+```
+with expanded as (
+  SELECT searches FROM search_frequency, generate_series(1, num_users, 1) order by searches
+)
+select percentile_cont(0.5) WITHIN group(order by searches) from expanded
+```

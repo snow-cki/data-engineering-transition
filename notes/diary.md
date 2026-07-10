@@ -24,3 +24,6 @@ Zadanie z profilowania tabeli z United Health, trudne zadanie z Facebook, szukan
 
 # 08.07.2026
 Zadanie z Amazona, nauka o self joins. Dwa zadania z Alibaby (szukanie mody i praca z wieloma kluczami obcymi w jednej tabeli). Już prawie połowa, celuje w 30 skończonych zadań
+
+# 10.07.2026
+Od dziś zadania oznaczone jako "trudne". Zrobione jedno z użyciem LAG, i jedno z użyciem percentile_cont. Nie wygląda to na coś co kiedykolwiek mi się przyda, zadanie polegało na serializacji danych i policzeniu mediany. Może kiedyś wrócę do tego zadania, ale bez używania generate_series i percentile
